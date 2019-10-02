@@ -1,4 +1,4 @@
-export const Colors = {
+export const AppColors = {
   light: '#FFF',
   dark: '2E2E2E',
   paper: '#FFFACD',
