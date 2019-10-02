@@ -7,6 +7,8 @@ import Routes from './routes';
 const Container = styled.SafeAreaView`
   background: ${AppColors.light};
   flex: 1;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 const App = () => {
