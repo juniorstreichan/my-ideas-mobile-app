@@ -1,15 +1,21 @@
 import React from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View } from 'react-native';
 import Button from '../../components/Button';
 import IdeaCard from '../../components/IdeaCard';
+import { FlatList } from 'react-native';
 
 export default function List({ navigation }) {
   return (
     <View style={{ flex: 1, width: '100%' }}>
       <Text>List</Text>
-      <IdeaCard />
+      <FlatList
+        keyExtractor={item => Math.random()}
+        data={[{}]}
+        renderItem={() => <IdeaCard />}
+      />
       <Button
-        label="HOME"
+        nextToTheSide
+        label="EUREKA"
         onPress={() => {
           navigation.navigate('Home');
         }}
