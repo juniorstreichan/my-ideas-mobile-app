@@ -9,7 +9,7 @@ export default function List({ navigation }) {
     <View style={{ flex: 1, width: '100%' }}>
       <Text>List</Text>
       <FlatList
-        keyExtractor={item => Math.random()}
+        keyExtractor={item => '#' + Math.random()}
         data={[{}]}
         renderItem={() => <IdeaCard />}
       />

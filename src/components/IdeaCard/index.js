@@ -23,12 +23,10 @@ export default function IdeaCard(props) {
 
   return (
     <Swipeable renderRightActions={renderOptions}>
-      <View>
-        <Shape activeOpacity={0.8}>
-          <Title>PEOJETO X</Title>
-          <Description>um projeto muito toppersson</Description>
-        </Shape>
-      </View>
+      <Shape activeOpacity={0.8}>
+        <Title>PEOJETO X</Title>
+        <Description>um projeto muito toppersson</Description>
+      </Shape>
     </Swipeable>
   );
 }
