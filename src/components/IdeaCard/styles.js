@@ -8,6 +8,7 @@ export const Shape = styled.TouchableOpacity`
   border-bottom-left-radius: 25px;
   margin-left: 15px;
   min-height: 130px;
+  margin-bottom: 15px;
 `;
 
 export const Title = styled.Text`
@@ -34,4 +35,5 @@ export const ActionsContainer = styled.View`
   width: 20%;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 15px;
 `;

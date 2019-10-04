@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import Button from '../../components/Button';
 import IdeaCard from '../../components/IdeaCard';
 import { FlatList } from 'react-native';
+import IdeaForm from '../../components/IdeaForm';
 
 export default function List({ navigation }) {
   return (
@@ -10,7 +11,7 @@ export default function List({ navigation }) {
       <Text>List</Text>
       <FlatList
         keyExtractor={item => '#' + Math.random()}
-        data={[{}]}
+        data={[{}, {}]}
         renderItem={() => (
           <IdeaCard
             onDelete={() => alert('DELETE')}
@@ -29,6 +30,7 @@ export default function List({ navigation }) {
           navigation.navigate('Home');
         }}
       />
+      <IdeaForm />
     </View>
   );
 }
