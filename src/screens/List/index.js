@@ -11,7 +11,16 @@ export default function List({ navigation }) {
       <FlatList
         keyExtractor={item => '#' + Math.random()}
         data={[{}]}
-        renderItem={() => <IdeaCard />}
+        renderItem={() => (
+          <IdeaCard
+            onDelete={() => alert('DELETE')}
+            onTap={() => alert('EDIT')}
+            idea={{
+              title: 'PROJETO TOPZERA',
+              description: 'um projeto muito topzera',
+            }}
+          />
+        )}
       />
       <Button
         nextToTheSide
