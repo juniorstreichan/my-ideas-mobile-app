@@ -1,4 +1,4 @@
-export type Poject = {
+export type Project = {
   _id?: string,
   title: string,
   ideas: [],

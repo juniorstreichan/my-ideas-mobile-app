@@ -21,6 +21,7 @@ const Wrapper = styled.TouchableOpacity`
   border-radius: 50px;
   margin: 5px 3px;
   font-family: 'Roboto';
+  opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
 
   ${({ nextToTheSide }) => {
     if (nextToTheSide) {
