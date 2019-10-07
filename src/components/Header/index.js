@@ -15,7 +15,7 @@ export default function Header({ title, onBackAction }: InnerProps) {
       <BackButtom onPress={onBackAction}>
         <Image source={backImage} />
       </BackButtom>
-      <Title>PROJETOP</Title>
+      <Title>{title}</Title>
     </Wrapper>
   );
 }

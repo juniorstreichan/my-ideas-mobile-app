@@ -1,13 +1,12 @@
 //@flow
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
-import Button from '../../components/Button';
-import IdeaCard from '../../components/IdeaCard';
-import { FlatList } from 'react-native';
-import IdeaForm from '../../components/IdeaForm';
+import { FlatList, View } from 'react-native';
 import { NavigationComponent } from 'react-navigation';
-import { Idea } from '../../types';
+import Button from '../../components/Button';
 import Header from '../../components/Header';
+import IdeaCard from '../../components/IdeaCard';
+import IdeaForm from '../../components/IdeaForm';
+import { Idea } from '../../types';
 
 const data = [
   {
@@ -23,7 +22,12 @@ export default function List({ navigation }: NavigationComponent) {
 
   return (
     <View style={{ flex: 1, width: '100%' }}>
-      <Header />
+      <Header
+        title="PROJETO MASSA"
+        onBackAction={() => {
+          navigation.navigate('Home');
+        }}
+      />
       <FlatList
         keyExtractor={item => '#' + Math.random()}
         data={data}
@@ -42,7 +46,7 @@ export default function List({ navigation }: NavigationComponent) {
         nextToTheSide
         label="EUREKA"
         onPress={() => {
-          navigation.navigate('Home');
+          setOpenModal(true);
         }}
       />
       {openModal && (
