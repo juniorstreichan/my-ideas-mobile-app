@@ -1,36 +1,32 @@
 //@flow
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { FlatList, View } from 'react-native';
 import { NavigationComponent } from 'react-navigation';
 import Button from '../../components/Button';
 import Header from '../../components/Header';
 import IdeaCard from '../../components/IdeaCard';
 import IdeaForm from '../../components/IdeaForm';
-import { Idea } from '../../types';
-
-const data = [
-  {
-    _id: '1230',
-    title: 'PROJETO TOPZERA',
-    description: 'um projeto muito topzera',
-  },
-];
+import { Idea, Project } from '../../types';
 
 export default function List({ navigation }: NavigationComponent) {
   const [openModal, setOpenModal] = useState(false);
   const [selectedIdea, setSelectedIdea] = useState<Idea>(null);
+  console.log('navigation.state', navigation.state);
+  const project: Project = useMemo(() => navigation.state.params.project, [
+    navigation.state.params.project,
+  ]);
 
   return (
     <View style={{ flex: 1, width: '100%' }}>
       <Header
-        title="PROJETO MASSA"
+        title={project.name}
         onBackAction={() => {
           navigation.navigate('Home');
         }}
       />
       <FlatList
-        keyExtractor={item => '#' + Math.random()}
-        data={data}
+        keyExtractor={item => item._id}
+        data={project.ideas}
         renderItem={({ item }) => (
           <IdeaCard
             onDelete={() => alert('DELETE')}
