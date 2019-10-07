@@ -1,25 +1,40 @@
-import React from 'react';
+//@flow
+import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import Button from '../../components/Button';
 import IdeaCard from '../../components/IdeaCard';
 import { FlatList } from 'react-native';
 import IdeaForm from '../../components/IdeaForm';
+import { NavigationComponent } from 'react-navigation';
+import { Idea } from '../../types';
+import Header from '../../components/Header';
 
-export default function List({ navigation }) {
+const data = [
+  {
+    _id: '1230',
+    title: 'PROJETO TOPZERA',
+    description: 'um projeto muito topzera',
+  },
+];
+
+export default function List({ navigation }: NavigationComponent) {
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedIdea, setSelectedIdea] = useState<Idea>(null);
+
   return (
     <View style={{ flex: 1, width: '100%' }}>
-      <Text>List</Text>
+      <Header />
       <FlatList
         keyExtractor={item => '#' + Math.random()}
-        data={[{}, {}]}
-        renderItem={() => (
+        data={data}
+        renderItem={({ item }) => (
           <IdeaCard
             onDelete={() => alert('DELETE')}
-            onTap={() => alert('EDIT')}
-            idea={{
-              title: 'PROJETO TOPZERA',
-              description: 'um projeto muito topzera',
+            onTap={() => {
+              setSelectedIdea(item);
+              setOpenModal(true);
             }}
+            idea={item}
           />
         )}
       />
@@ -30,7 +45,19 @@ export default function List({ navigation }) {
           navigation.navigate('Home');
         }}
       />
-      <IdeaForm />
+      {openModal && (
+        <IdeaForm
+          onDelete={() => {
+            setSelectedIdea(null);
+            setOpenModal(false);
+          }}
+          onSave={() => {
+            setSelectedIdea(null);
+            setOpenModal(false);
+          }}
+          idea={selectedIdea}
+        />
+      )}
     </View>
   );
 }

@@ -10,6 +10,7 @@ const Input = styled.TextInput`
   padding: 2px 7px;
   font-size: 18px;
   margin: 5px 3px;
+  font-family: 'Roboto';
 `;
 
 export default Input;

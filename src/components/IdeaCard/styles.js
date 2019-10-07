@@ -14,6 +14,7 @@ export const Shape = styled.TouchableOpacity`
 export const Title = styled.Text`
   font-size: 20px;
   font-weight: bold;
+  font-family: 'Roboto';
 `;
 
 export const Description = styled.Text`

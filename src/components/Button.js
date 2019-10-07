@@ -20,6 +20,7 @@ const Wrapper = styled.TouchableOpacity`
   flex-direction: row;
   border-radius: 50px;
   margin: 5px 3px;
+  font-family: 'Roboto';
 
   ${({ nextToTheSide }) => {
     if (nextToTheSide) {
@@ -40,6 +41,7 @@ const LabelText = styled.Text`
   color: ${AppColors.light};
   font-weight: bold;
   font-size: 18px;
+  font-family: 'Roboto';
 `;
 
 export default function Button({ label, ...props }: BtnProps) {
