@@ -20,19 +20,20 @@ export const ActionsContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
 `;
+
 const buttonStyles = `
     width: 50px;
     height: 50px;
     border-radius: 50px;
     justify-content: center;
     align-items: center;
+    font-family:'Roboto';
 `;
 export const ButtonSave = styled.TouchableOpacity.attrs({
   activeOpacity: 0.8,
 })`
   ${buttonStyles}
-
-  background-color:${AppColors.success};
+  background-color: ${AppColors.success};
 `;
 
 export const ButtonDelete = styled.TouchableOpacity.attrs({
@@ -50,6 +51,7 @@ export const EditTitle = styled.TextInput.attrs({
 })`
   font-weight: bold;
   font-size: 24px;
+  font-family: 'Roboto';
 `;
 
 export const EditDescription = styled.TextInput.attrs({
@@ -62,4 +64,5 @@ export const EditDescription = styled.TextInput.attrs({
   color: ${AppColors.dark};
   border-color: ${AppColors.dark}09;
   border-width: 1px;
+  font-family: 'Roboto';
 `;
