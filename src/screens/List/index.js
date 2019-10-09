@@ -11,7 +11,7 @@ import { Idea, Project } from '../../types';
 export default function List({ navigation }: NavigationComponent) {
   const [openModal, setOpenModal] = useState(false);
   const [selectedIdea, setSelectedIdea] = useState<Idea>(null);
-  console.log('navigation.state', navigation.state);
+  // console.log('navigation.state', navigation.state);
   const project: Project = useMemo(() => navigation.state.params.project, [
     navigation.state.params.project,
   ]);

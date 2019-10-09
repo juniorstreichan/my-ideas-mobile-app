@@ -46,9 +46,10 @@ const LabelText = styled.Text`
 `;
 
 export default function Button({ label, ...props }: BtnProps) {
+  const labelType = typeof label;
   return (
     <Wrapper {...props}>
-      <LabelText>{label}</LabelText>
+      {labelType === 'string' ? <LabelText>{label}</LabelText> : label}
       {props.nextToTheSide && <Image source={icon} />}
     </Wrapper>
   );
