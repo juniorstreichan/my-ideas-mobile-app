@@ -1,12 +1,13 @@
 //@flow
-import React, { useState, useMemo } from 'react';
-import { FlatList, View } from 'react-native';
+import React, { useEffect, useMemo, useState } from 'react';
+import { BackHandler, FlatList } from 'react-native';
 import { NavigationComponent } from 'react-navigation';
 import Button from '../../components/Button';
 import Header from '../../components/Header';
 import IdeaCard from '../../components/IdeaCard';
 import IdeaForm from '../../components/IdeaForm';
 import { Idea, Project } from '../../types';
+import { Wrapper } from './styles';
 
 export default function List({ navigation }: NavigationComponent) {
   const [openModal, setOpenModal] = useState(false);
@@ -16,8 +17,21 @@ export default function List({ navigation }: NavigationComponent) {
     navigation.state.params.project,
   ]);
 
+  useEffect(() => {
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      () => {
+        navigation.navigate('Home');
+        return true;
+      },
+    );
+    return () => {
+      backHandler.remove();
+    };
+  }, [navigation]);
+
   return (
-    <View style={{ flex: 1, width: '100%' }}>
+    <Wrapper>
       <Header
         title={project.name}
         onBackAction={() => {
@@ -58,6 +72,6 @@ export default function List({ navigation }: NavigationComponent) {
           idea={selectedIdea}
         />
       )}
-    </View>
+    </Wrapper>
   );
 }
