@@ -52,7 +52,7 @@ export default function IdeaForm({ onDelete, onSave, idea }: InnerProps) {
           <ButtonSave onPress={() => onSave({ ...idea, title, description })}>
             <Image source={checkImage} />
           </ButtonSave>
-          <ButtonDelete onPress={() => onDelete()}>
+          <ButtonDelete onPress={() => onDelete(idea._id)}>
             <Image source={trashImage} />
           </ButtonDelete>
         </ActionsContainer>

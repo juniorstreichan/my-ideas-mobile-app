@@ -9,7 +9,6 @@ export const Wrapper = styled.View.attrs({
   align-items: center;
   background: ${AppColors.light};
   justify-content: space-around;
-  margin-bottom: 20px;
 
   border-bottom-color: ${AppColors.dark}99;
   border-bottom-width: 3px;
