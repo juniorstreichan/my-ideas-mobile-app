@@ -1,6 +1,6 @@
 //@flow
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, View } from 'react-native';
 import { Wrapper, Title, BackButtom } from './styles';
 import backImage from '../../assets/img/back.png';
 
@@ -16,6 +16,7 @@ export default function Header({ title, onBackAction }: InnerProps) {
         <Image source={backImage} />
       </BackButtom>
       <Title>{title}</Title>
+      <View style={{ flex: 1 }} />
     </Wrapper>
   );
 }

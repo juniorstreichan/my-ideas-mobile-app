@@ -9,6 +9,8 @@ export const Shape = styled.TouchableOpacity`
   margin-left: 15px;
   min-height: 130px;
   margin-bottom: 15px;
+  border-color: #33333309;
+  border-width: 1px;
 `;
 
 export const Title = styled.Text`
