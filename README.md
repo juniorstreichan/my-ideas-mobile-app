@@ -9,7 +9,7 @@ Maked with **React Native, styled-components, react-navigation**, and others lib
 
 this app integrates with the API that is in this  [repo](https://github.com/juniorstreichan/my-ideas-backend).
 
-*.env file*
+*.env file* <br />
 please, create a .env file like the .env.example file with the configs.
 
 **The commands**
